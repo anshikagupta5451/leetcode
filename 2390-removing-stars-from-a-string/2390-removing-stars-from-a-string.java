@@ -16,12 +16,10 @@ class Solution {
             } 
         }
         String a="";
-        // System.out.println(st.size());
         int y=st.size();
         for(int i=0;i<y;i++)
         {
             char at=st.pop();
-            // System.out.println(at);
             a=at+a;
         }
         
