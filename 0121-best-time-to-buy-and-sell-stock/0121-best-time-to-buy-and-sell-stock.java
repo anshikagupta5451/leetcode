@@ -7,7 +7,7 @@ class Solution {
             mi=Math.min(mi,arr[i]);
             d=Math.max(arr[i]-mi,d);
         }
-        System.out.println(mi);
+        // System.out.println(mi);
         if(d>0)
             return d;
         else
