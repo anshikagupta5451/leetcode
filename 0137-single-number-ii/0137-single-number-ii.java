@@ -1,18 +1,17 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int ans=0;
-        for(int i=0;i<32;i++)
-        {
-           int cntbit=0;
-            for(int x:nums)
-            {
-                if(((1)&(x>>i))==1)
-                    cntbit++;
-                    cntbit%=3;
-            }
-                   if(cntbit!=0)
-                   ans|=cntbit<<i;
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        for (int x : nums) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
         }
-     return ans;
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+        
+        return -1;
     }
 }
